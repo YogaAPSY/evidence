@@ -26,8 +26,11 @@
     			<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
     				data-target="#navbar-collapse" aria-expanded="false"></a>
     			<a href="javascript:void(0);" class="bars"></a>
-    			<a class="navbar-brand"
-    				href="index.html"><?= ($this->session->userdata('status') == 1) ? 'Admin Pegawai' : 'Admin - Apoteker'; ?></a>
+    			<a class="navbar-brand" href="index.html">
+
+    				<?= ($this->session->userdata('status') == 1) ? 'Dashboard Vendor' : 'Admin - Kontrak'; ?></a>
+
+
     		</div>
     		<div class="collapse navbar-collapse" id="navbar-collapse">
     			<ul class="nav navbar-nav navbar-right">
@@ -72,13 +75,14 @@
     						<span>Home</span>
     					</a>
     				</li>
-    				<?php if ($this->session->userdata('status') != 1) : ?>
-    				<li class="<?php echo ($title == 'kontrak') ? 'active' : ''; ?>">
-    					<a href="<?= base_url(); ?>kontrak">
-    						<i class="material-icons">layers</i>
-    						<span>Pelaksanaan Kontrak</span>
+    				<?php if ($this->session->userdata('status') == 1) : ?>
+    				<li class="<?php echo ($title == 'monitoring') ? 'active' : ''; ?>">
+    					<a href="<?= base_url(); ?>Kontrak/monitoring">
+    						<i class=" material-icons">view_list</i>
+    						<span>Monitoring Kontrak</span>
     					</a>
     				</li>
+
     				<?php endif; ?>
 
 
@@ -89,14 +93,13 @@
     					</a>
     				</li> -->
     				<?php if ($this->session->userdata('status') != 1) : ?>
-    				<li class="<?php echo ($title == 'satuan') ? 'active' : ''; ?>">
-    					<a href="<?= base_url(); ?>Satuan"">
-                            <i class=" material-icons">account_balance_wallet</i>
-    						<span>Satuan</span>
+
+    				<li class="<?php echo ($title == 'kontrak') ? 'active' : ''; ?>">
+    					<a href="<?= base_url(); ?>kontrak">
+    						<i class="material-icons">layers</i>
+    						<span>Pelaksanaan Kontrak</span>
     					</a>
     				</li>
-
-
     				<li class="<?php echo ($title == 'monitoring') ? 'active' : ''; ?>">
     					<a href="<?= base_url(); ?>Kontrak/monitoring">
     						<i class=" material-icons">view_list</i>
@@ -111,6 +114,14 @@
     						<span>Master Vendor</span>
     					</a>
     				</li>
+
+    				<li class="<?php echo ($title == 'satuan') ? 'active' : ''; ?>">
+    					<a href="<?= base_url(); ?>Satuan"">
+                            <i class=" material-icons">account_balance_wallet</i>
+    						<span>Satuan</span>
+    					</a>
+    				</li>
+
     				<?php endif; ?>
     			</ul>
     		</div>

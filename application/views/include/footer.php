@@ -44,17 +44,22 @@
 
 <!-- Jquery DataTable Plugin Js -->
 <script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/jquery.dataTables.js"></script>
-<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js">
+</script>
+<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js">
+</script>
+<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/buttons.flash.min.js">
+</script>
 <script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
 <script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
 <script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/buttons.html5.min.js">
+</script>
+<script src="<?= base_url(); ?>assets/AdminBsb/plugins/jquery-datatable/extensions/export/buttons.print.min.js">
+</script>
 
 <script>
-	$(document).ready(function() {
+	$(document).ready(function () {
 		$('#lapor').DataTable({
 			dom: 'Bfrtip',
 			buttons: [{
@@ -77,13 +82,14 @@
 			]
 		});
 	});
+
 </script>
 <!-- Bootstrap Datepicker Plugin Js -->
 <script src="<?= base_url(); ?>assets/AdminBsb/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="<?= base_url(); ?>assets/AdminBsb/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
 <script type="text/javascript">
-	$(function() {
+	$(function () {
 		$(".datepicker").datepicker({
 			format: 'yyyy-mm-dd',
 			todayHighlight: true,
@@ -92,26 +98,31 @@
 
 		});
 	});
+
 </script>
 
 
 <script type="text/javascript">
-	$(document).on("click", "#btn_posisi", function() {
+	$(document).on("click", "#btn_posisi", function () {
 		var id = $(this).data('id');
-		var url = '<?= site_url('kategori/delete/') ?>';
+		var url = '<?= site_url('
+		kategori / delete / ') ?>';
 		$("#hapus_nyo").attr('href', url + id);
 
 	})
+
 </script>
 
 
 <script type="text/javascript">
-	$(document).on("click", "#btn_posisi1", function() {
+	$(document).on("click", "#btn_posisi1", function () {
 		var id = $(this).data('id');
-		var url = '<?= site_url('satuan/delete/') ?>';
+		var url = '<?= site_url('
+		satuan / delete / ') ?>';
 		$("#hapus_nyo").attr('href', url + id);
 
 	})
+
 </script>
 <script>
 	function cekJpg(file) {
@@ -133,7 +144,9 @@
 				sFileExtension === "png") || FileSize > 0.5) { /// 10 mb
 			txt = "Tipe File :   '" + sFileExtension + "'\n\n";
 			txt += "Size:  " + iConvert + " MB \n\n";
-			txt += "Tidak Diperbolehkan Karna Bukan Format File Yang Diperbolehkan JPG,JPEG,PNG dan tidak lebih dari 500 KB.\n\n" + sFileExtension + FileSize;
+			txt +=
+				"Tidak Diperbolehkan Karna Bukan Format File Yang Diperbolehkan JPG,JPEG,PNG dan tidak lebih dari 500 KB.\n\n" +
+				sFileExtension + FileSize;
 			console.log(txt);
 			swal({
 				title: "ERROR !!!",
@@ -147,71 +160,150 @@
 			console.log('ini salah');
 		}
 	}
+
 </script>
 
 <script>
-	$(function() {
-		new Chart(document.getElementById("line_chart").getContext("2d"), getChartJs('line'));
-		new Chart(document.getElementById("pie_chart").getContext("2d"), getChartJs('pie'));
-	});
+	function mulai() {
 
-	function getChartJs(type) {
-		var config = null;
+		$(".datepicker").datepicker({
+			format: 'yyyy-mm-dd',
+			orientation: 'bottom auto',
+			autoclose: true,
+			todayHighlight: true,
+		});
 
-		if (type === 'line') {
-			config = {
-				type: 'line',
-				data: {
-					labels: ["January", "February", "March", "April", "May", "June", "July"],
-					datasets: [{
-						label: "My First dataset",
-						data: [65, 59, 80, 81, 56, 55, 40],
-						borderColor: 'rgba(0, 188, 212, 0.75)',
-						backgroundColor: 'rgba(0, 188, 212, 0.3)',
-						pointBorderColor: 'rgba(0, 188, 212, 0)',
-						pointBackgroundColor: 'rgba(0, 188, 212, 0.9)',
-						pointBorderWidth: 1
-					}, {
-						label: "My Second dataset",
-						data: [28, 48, 40, 19, 86, 27, 90],
-						borderColor: 'rgba(233, 30, 99, 0.75)',
-						backgroundColor: 'rgba(233, 30, 99, 0.3)',
-						pointBorderColor: 'rgba(233, 30, 99, 0)',
-						pointBackgroundColor: 'rgba(233, 30, 99, 0.9)',
-						pointBorderWidth: 1
-					}]
-				},
-				options: {
-					responsive: true,
-					legend: false
-				}
-			}
-		} else if (type === 'pie') {
-			config = {
-				type: 'pie',
-				data: {
-					datasets: [{
-						data: [225, 50, 100, 40],
-						backgroundColor: [
-							"rgb(233, 30, 99)",
-							"rgb(255, 193, 7)",
-							"rgb(0, 188, 212)",
-							"rgb(139, 195, 74)"
-						],
-					}],
-					labels: [
-						"Pink",
-						"Amber",
-						"Cyan",
-						"Light Green"
-					]
-				},
-				options: {
-					responsive: true,
-					legend: false
-				}
+		var mulai = new Date($('#tanggal_mulai').datepicker().val());
+		var selesai = new Date($('#tanggal_selesai').val());
+
+		console.log(mulai);
+		if (selesai != '') {
+			if (mulai >= selesai) {
+				swal({
+					title: "Opps !!!",
+					text: "Tanggal selesai tidak boleh lebih rendah dari tanggal mulai",
+					showConfirmButton: false,
+					type: 'error',
+				});
+				$('#tanggal_mulai').val('');
+
+			} else {
+				$('#tanggal_mulai').val(mulai);
 			}
 		}
-		return config;
+
+
 	}
+
+	function selesai() {
+
+		$(".datepicker").datepicker({
+			format: 'yyyy-mm-dd',
+			orientation: 'bottom auto',
+			autoclose: true,
+			todayHighlight: true,
+		});
+
+		var selesai = new Date($('#tanggal_selesai').datepicker().val());
+		var mulai = new Date($('#tanggal_mulai').val());
+		console.log(mulai);
+		if (mulai != '') {
+			if (selesai <= mulai) {
+				swal({
+					title: "Opps !!!",
+					text: "Tanggal selesai tidak boleh lebih rendah dari tanggal mulai",
+					showConfirmButton: false,
+					type: 'error',
+				});
+				$('#tanggal_selesai').val('');
+			} else {
+				$('#tanggal_selesai').val(selesai);
+			}
+		}
+	}
+
+	function mulaiedit(idx) {
+
+		$(".datepicker").datepicker({
+			format: 'yyyy-mm-dd',
+			orientation: 'bottom auto',
+			autoclose: true,
+			todayHighlight: true,
+		});
+
+		var id = idx;
+		var mulai = new Date($('#tanggal_mulai' + id).datepicker().val());
+		var selesai = new Date($('#tanggal_selesai' + id).val());
+
+		console.log(mulai);
+		if (selesai != '') {
+			if (mulai >= selesai) {
+				swal({
+					title: "Opps !!!",
+					text: "Tanggal selesai tidak boleh lebih rendah dari tanggal mulai",
+					showConfirmButton: false,
+					type: 'error',
+				});
+				$('#tanggal_mulai' + id).val('');
+
+			} else {
+				$('#tanggal_mulai' + id).val(mulai);
+			}
+		}
+
+
+	}
+
+	function selesaiedit(idx) {
+
+		$(".datepicker").datepicker({
+			format: 'yyyy-mm-dd',
+			orientation: 'bottom auto',
+			autoclose: true,
+			todayHighlight: true,
+		});
+		var id = idx;
+		var selesai = new Date($('#tanggal_selesai' + id).datepicker().val());
+		var mulai = new Date($('#tanggal_mulai' + id).val());
+		console.log(selesai);
+		if (mulai != '') {
+			if (selesai <= mulai) {
+				swal({
+					title: "Opps !!!",
+					text: "Tanggal selesai tidak boleh lebih rendah dari tanggal mulai",
+					showConfirmButton: false,
+					type: 'error',
+				});
+				$('#tanggal_selesai' + id).val('');
+			} else {
+				$('#tanggal_selesai' + id).val(selesai);
+			}
+		}
+	}
+
+</script>
+
+<script>
+	function cekTambah(id, vol) {
+		var vol = vol;
+		var x = document.getElementById("stokTambah" + id).value;
+		if (x <= 0) {
+			swal({
+				title: "Opps !!!",
+				text: "Realisasi tidak boleh kurang dari 0",
+				showConfirmButton: false,
+				type: 'error',
+			});
+			$('#stokTambah' + id).val('');
+		} else if (x > vol) {
+			swal({
+				title: "Opps !!!",
+				text: "Realisasi tidak boleh lebih dari volume",
+				showConfirmButton: false,
+				type: 'error',
+			});
+			$('#stokTambah' + id).val('');
+		}
+	}
+
 </script>

@@ -66,7 +66,7 @@
      								<tbody>
 
      									<?php $i = 1;
-										foreach ($kontraks as $kontrak) : ?>
+										foreach ($vendors as $kontrak) : ?>
      									<tr>
      										<td><?= $i++; ?></td>
      										<td><?= $kontrak['nomor_kontrak']  ?></td>
@@ -90,7 +90,7 @@
      													class="material-icons">description</i></a>&nbsp;</td>
      										<td style="text-align: center;vertical-align: middle;">
      											<center>
-     												<a href="<?= base_url(); ?>rekap/laporan/<?= $kontrak['id_kontrak']; ?>"
+     												<a href="<?= base_url(); ?>vendor/detail/<?= $kontrak['id_kontrak']; ?>"
      													data-toggle="tooltip" data-placement="top" title="View"><i
      														style="color: #32CD32;"
      														class="material-icons">visibility</i></a>&nbsp;

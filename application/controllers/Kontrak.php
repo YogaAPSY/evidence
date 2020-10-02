@@ -28,7 +28,7 @@ class Kontrak extends CI_Controller
 	{
 		$data['title'] = 'monitoring';
 		$data['kontraks'] = get_nama_kontrak();
-		$data['vendor'] = $this->kontrak_model->get_vendor();
+		// $data['vendor'] = $this->kontrak_model->get_vendor();
 		$data['layout'] = 'kontrak/monitoring_kontrak';
 		$this->load->view('layout', $data);
 	}

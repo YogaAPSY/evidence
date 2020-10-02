@@ -140,7 +140,7 @@ class User extends CI_Controller
 			$data = array(
 				'username' => $this->security->xss_clean($this->input->post('username')),
 				'created_by' => $this->session->userdata('nama'),
-				'status' => 1,
+				'status' => $this->security->xss_clean($this->input->post('status')),
 				'nama' => $this->security->xss_clean($this->input->post('nama')),
 
 				'password' => $this->security->xss_clean(password_hash($this->input->post('password'), PASSWORD_BCRYPT)),

@@ -26,9 +26,10 @@ class Rekap extends CI_Controller
 		$this->load->view('layout', $data);
 	}
 
-		public function laporan($id)
-		{
-		$data['title'] = 'kontrak';
+	public function laporan($id)
+	{
+		$data['title'] = 'monitoring';
+		$data['title2'] = 'print';
 		$data['jumlah_seluruh'] = $this->rekap_model->jumlah_harga($id);
 		// $progress = $this->rekap_model->progress($id);
 		// var_dump($progress);
@@ -39,7 +40,7 @@ class Rekap extends CI_Controller
 		// $data['vendor'] = $this->rekap_model->get_vendor();
 		$data['layout'] = 'kontrak/laporan_kontrak';
 		$this->load->view('layout', $data);
-		}
+	}
 
 
 	public function berkas()

@@ -114,22 +114,23 @@
             							</div>
             						</div>
 
-            						<!-- <div class="row clearfix">
+            						<div class="row clearfix">
             							<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             								<h4 style="font-size: 17.1px;">Status</h4>
             							</div>
             							<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
             								<div class="form-group">
             									<div class="form-line">
-            										<select style="font-size: 14px;" class="form-control show-tick" name="status" required autocomplete="off">
+            										<select style="font-size: 14px;" class="form-control show-tick"
+            											name="status" required autocomplete="off">
             											<option value="" selected disabled>-- Pilih Status --</option>
-            											<option value="1">Pegawai</option>
+            											<option value="1">Vendor</option>
             											<option value="2">Admin</option>
             										</select>
             									</div>
             								</div>
             							</div>
-            						</div> -->
+            						</div>
 
             						<div class="row clearfix">
             							<input type="submit" class="btn btn-primary pull-right"

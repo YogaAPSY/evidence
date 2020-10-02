@@ -28,7 +28,7 @@
      <section class="content">
      	<div class="container-fluid">
      		<div class="block-header">
-     			<h2>Identitas rekap</h2>
+     			<h2>DETAIL REKAP PELAKSANAAN KONTRAK</h2>
      		</div>
 
      		<!-- Basic Examples -->
@@ -37,7 +37,7 @@
      				<div class="card">
      					<div class="header">
      						<h2 style="font-size: 22px;color:#ad1455;font-weight: bold;">
-     							<center>List rekap</center>
+     							<center>DETAIL REKAP PELAKSANAAN KONTRAK</center>
      						</h2> <br><br>
      						<!-- <a href="<?= base_url(); ?>rekap/add">
     							<button type="button" class="btn btn-info waves-effect">
@@ -147,7 +147,7 @@
      													<div class="form-group">
      														<label for="satuan">Vol :</label>
      														<div class="form-line">
-     															<input type="text" value="<?= $rekap['vol'] ?>"
+     															<input type="number" value="<?= $rekap['vol'] ?>"
      																id="vol" placeholder="Pengadaan" name="vol"
      																class="form-control" required autocomplete="off">
      														</div>
@@ -157,7 +157,7 @@
      													<div class="form-group">
      														<label for="satuan">Harga:</label>
      														<div class="form-line">
-     															<input type="text" value="<?= $rekap['harga'] ?>"
+     															<input type="number" value="<?= $rekap['harga'] ?>"
      																id="harga" name="harga" placeholder="2000000"
      																class="form-control" required autocomplete="off">
      														</div>
@@ -270,7 +270,7 @@
      				<div class="form-group">
      					<label for="satuan">Vol :</label>
      					<div class="form-line">
-     						<input type="text" id="vol" placeholder="69" name="vol" class="form-control" required
+     						<input type="number" id="vol" placeholder="69" name="vol" class="form-control" required
      							autocomplete="off">
      					</div>
      				</div>
@@ -279,7 +279,7 @@
      				<div class="form-group">
      					<label for="satuan">Harga:</label>
      					<div class="form-line">
-     						<input type="text" id="harga" name="harga" placeholder="2000000" class="form-control"
+     						<input type="number" id="harga" name="harga" placeholder="2000000" class="form-control"
      							required autocomplete="off">
      					</div>
      				</div>

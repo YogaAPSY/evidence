@@ -56,7 +56,8 @@
      					<div class="body">
 
      						<div class="table-responsive">
-     							<table class="table table-bordered table-striped table-hover" id="lapor">
+     							<table
+     								class="table table-bordered table-striped table-hover js-basic-example dataTable">
 
      								<thead>
      									<tr>
@@ -69,8 +70,8 @@
      										<th>Satuan</th>
      										<th>Harga</th>
      										<th>Jumlah</th>
-
      										<th>Progress</th>
+     										<th style="text-align: center;">Add Realisasi</th>
      									</tr>
      								</thead>
 
@@ -94,8 +95,52 @@
      										<td>
      											<?php $progress = $rekap['realisasi'] / $rekap['vol'] * 100; echo floor($progress) ?>%
      										</td>
+     										<td style=" text-align: center;vertical-align: middle;">
+     											<a href="#" title="Tambah Stok" data-id="#" data-toggle="modal"
+     												data-target="#ModalTambah<?= $rekap['id_kontrak'] ?>"><i
+     													style="color:green;"
+     													class="material-icons">add_circle_outline</i></a>
+     										</td>
      									</tr>
 
+
+     									<!-- Tambah Modal-->
+     									<div class="modal fade" id="ModalTambah<?= $rekap['id_kontrak'] ?>"
+     										tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     										aria-hidden="true">
+     										<div class="modal-dialog modal-dialog-centered" role="document">
+     											<div class="modal-content">
+     												<div class="modal-header">
+     													<h5 class="modal-title" id="exampleModalLabel">Tambah realisasi
+     													</h5>
+     													<button class="close" type="button" data-dismiss="modal"
+     														aria-label="Close">
+     														<span aria-hidden="true">×</span>
+     													</button>
+     												</div>
+     												<?php $attributes = array('method' => 'post'); ?>
+
+     												<?php echo form_open('vendor/add/' . $rekap['id_kontrak'], $attributes); ?>
+     												<div class="modal-body">
+     													<label for="">Realisasi</label>
+     													<input type="number" id="stokTambah<?= $rekap['id_kontrak'] ?>"
+     														name="realisasi" class="form-control"
+     														placeholder="Total progress yang sudah terealisasi"
+     														onblur="cekTambah(<?= $rekap['id_kontrak'] ?>, <?= $rekap['vol'] ?>)">
+
+     												</div>
+     												<!-- Modal footer -->
+     												<div class="modal-footer">
+     													<input type="submit" name="submit" class="btn btn-primary"
+     														value="Add">
+     													<!-- <button type="button" class="btn btn-secondary">Simpan</button> -->
+
+     												</div>
+     												</form>
+     											</div>
+     										</div>
+
+     									</div>
 
      									<?php endforeach; ?>
      									<!-- <tr>
@@ -126,7 +171,7 @@
      									</tr> -->
 
      								</tbody>
-     								<tfoot>
+     								<!-- <tfoot>
      									<tr>
      										<td>Jumlah</td>
      										<td><strong>Rp. <?= number_format($jumlah_seluruh['harga']) ?></strong>
@@ -147,7 +192,7 @@
      									</tr>
 
 
-     								</tfoot>
+     								</tfoot> -->
      							</table>
      						</div>
      					</div>

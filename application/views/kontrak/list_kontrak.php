@@ -66,8 +66,8 @@
      										<th>Judul Kontrak</th>
      										<th>Mulai Kontrak</th>
      										<th>Selesai Kontrak</th>
-     										<th>Progress</th>
-     										<th>Berkas</th>
+     										<!-- <th>Progress</th>
+     										<th>Berkas</th> -->
      										<th style="text-align: center;width:100px">ACTION</th>
      									</tr>
      								</thead>
@@ -83,11 +83,11 @@
      										<td><?= $kontrak['judul_kontrak'] ?></td>
      										<td><?= $kontrak['mulai_kontrak']  ?></td>
      										<td><?= $kontrak['selesai_kontrak'] ?></td>
-     										<td>100%</td>
-     										<td> <a href="#" type="button" data-toggle="modal"
+     										<!-- <td>100%</td> -->
+     										<!-- <td> <a href="#" type="button" data-toggle="modal"
      												data-target="#ModalView<?= $kontrak['id_kontrak']?>"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
-     													class="material-icons">description</i></a>&nbsp;</td>
+     													class="material-icons">description</i></a>&nbsp;</td> -->
      										<td style="text-align: center;vertical-align: middle;">
      											<center>
      												<a href="<?= base_url(); ?>rekap/detail/<?= $kontrak['id_kontrak']; ?>"
@@ -127,9 +127,8 @@
      														<div class="form-line">
      															<input type="text"
      																value="<?= $kontrak['nomor_kontrak'] ?>"
-     																id="nomor_kontrak" name="nomor_kontrak"
-     																placeholder="005/xxx/xxx" class="form-control"
-     																required autocomplete="off">
+     																name="nomor_kontrak" placeholder="005/xxx/xxx"
+     																class="form-control" required autocomplete="off">
      														</div>
      													</div>
 
@@ -161,8 +160,8 @@
      														<label for="satuan">Judul Kontrak :</label>
      														<div class="form-line">
      															<input value="<?= $kontrak['judul_kontrak'] ?>" type="
-     																text" id="judul_kontrak" placeholder="Pengadaan" name="judul_kontrak" class="form-control"
-     																required autocomplete="off">
+     																text" placeholder="Pengadaan" name="judul_kontrak" class="form-control" required
+     																autocomplete="off">
      														</div>
      													</div>
 
@@ -171,9 +170,10 @@
      														<label for="satuan">Mulai Kontrak :</label>
      														<div class="form-line">
      															<input type="text"
+     																id="tanggal_mulai<?= $kontrak['id_kontrak'] ?>"
+     																onchange="mulaiedit(<?= $kontrak['id_kontrak'] ?>)"
      																value="<?= $kontrak['mulai_kontrak'] ?>"
-     																id="mulai_kontrak" name="mulai_kontrak"
-     																placeholder="2020-12-12"
+     																name="mulai_kontrak" placeholder="2020-12-12"
      																class="form-control datepicker" required
      																autocomplete="off">
      														</div>
@@ -184,9 +184,10 @@
      														<label for="satuan">Selesai Kontrak :</label>
      														<div class="form-line">
      															<input type="text"
+     																id="tanggal_selesai<?= $kontrak['id_kontrak'] ?>"
+     																onchange="selesaiedit(<?= $kontrak['id_kontrak'] ?>)"
      																value="<?= $kontrak['selesai_kontrak'] ?>"
-     																id="selesai_kontrak" placeholder="2020-12-12"
-     																name="selesai_kontrak"
+     																placeholder="2020-12-12" name="selesai_kontrak"
      																class="form-control datepicker" required
      																autocomplete="off">
      														</div>
@@ -279,8 +280,8 @@
      				<div class="form-group">
      					<label for="satuan">Mulai Kontrak :</label>
      					<div class="form-line">
-     						<input type="text" id="mulai_kontrak" name="mulai_kontrak" placeholder="2020-12-12"
-     							class="form-control datepicker" required autocomplete="off">
+     						<input type="text" onchange="mulai()" id="tanggal_mulai" name="mulai_kontrak"
+     							placeholder="2020-12-12" class="form-control datepicker" required autocomplete="off">
      					</div>
      				</div>
 
@@ -288,8 +289,8 @@
      				<div class="form-group">
      					<label for="satuan">Selesai Kontrak :</label>
      					<div class="form-line">
-     						<input type="text" id="selesai_kontrak" placeholder="2020-12-12" name="selesai_kontrak"
-     							class="form-control datepicker" required autocomplete="off">
+     						<input type="text" onchange="selesai()" id="tanggal_selesai" placeholder="2020-12-12"
+     							name="selesai_kontrak" class="form-control datepicker" required autocomplete="off">
      					</div>
      				</div>
 

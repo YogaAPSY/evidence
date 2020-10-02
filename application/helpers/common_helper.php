@@ -40,6 +40,12 @@ function get_nama_kontrak()
 	return $CI->db->get('xx_kontrak')->result_array();
 }
 
+// function get_list_kontrak_by_id($id)
+// {
+// $CI = &get_instance();
+// return $CI->db->get('xx_kontrak', array('id_vendor', $id))->result_array();
+// }
+
 function get_satuan()
 {
 	$CI = &get_instance();
