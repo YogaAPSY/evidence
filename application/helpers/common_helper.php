@@ -58,6 +58,12 @@ function check_rekap($id)
 		return $CI->db->get_where('xx_rekap', array('id_kontrak' => $id))->num_rows();
 }
 
+function check_dokumen($id)
+{
+		$CI = &get_instance();
+		return $CI->db->get_where('xx_dokumen', array('id_kontrak' => $id))->num_rows();
+}
+
 function get_progress($id)
 {
 	$CI = &get_instance();

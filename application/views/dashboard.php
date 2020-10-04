@@ -12,7 +12,8 @@
     					</div>
     					<div class="content">
     						<div class="text">TOTAL OBAT</div>
-    						<div class="number count-to" data-from="0" data-to="<?= $total_obat ?> " data-speed="15" data-fresh-interval="20"></div>
+    						<div class="number count-to" data-from="0" data-to="12 " data-speed="15"
+    							data-fresh-interval="20"></div>
     					</div>
     				</div>
     			</div>
@@ -23,7 +24,8 @@
     					</div>
     					<div class="content">
     						<div class="text">TOTAL PEGAWAI</div>
-    						<div class="number count-to" data-from="0" data-to="<?= $total_user ?>" data-speed="1000" data-fresh-interval="20"></div>
+    						<div class="number count-to" data-from="0" data-to="12" data-speed="1000"
+    							data-fresh-interval="20"></div>
     					</div>
     				</div>
     			</div>
@@ -34,7 +36,8 @@
     					</div>
     					<div class="content">
     						<div class="text">TOTAL ADMIN</div>
-    						<div class="number count-to" data-from="0" data-to="<?= $total_admin ?>" data-speed="1000" data-fresh-interval="20"></div>
+    						<div class="number count-to" data-from="0" data-to="12" data-speed="1000"
+    							data-fresh-interval="20"></div>
     					</div>
     				</div>
     			</div>
@@ -45,7 +48,8 @@
     					</div>
     					<div class="content">
     						<div class="text">TOTAL TRANSAKSI</div>
-    						<div class="number count-to" data-from="0" data-to="<?= $total_transaksi ?>" data-speed="1000" data-fresh-interval="20"></div>
+    						<div class="number count-to" data-from="0" data-to="12" data-speed="1000"
+    							data-fresh-interval="20"></div>
     					</div>
     				</div>
     			</div>

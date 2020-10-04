@@ -84,10 +84,15 @@
 											 }
 											 
 											   ?>%</td>
-     										<td> <a href="#" type="button" data-toggle="modal"
-     												data-target="#ModalView<?= $kontrak['id_kontrak']?>"
-     												data-placement="top" title="Edit"><i style="color:#00b0e4;"
-     													class="material-icons">description</i></a>&nbsp;</td>
+     										<td style="text-align: center;vertical-align: middle;">
+     											<center>
+     												<a href="<?= base_url(); ?>rekap/berkas/<?= $kontrak['id_kontrak']; ?>"
+     													data-toggle="tooltip" data-placement="top" title="View"><i
+     														style="color: #00b0e4;"
+     														class="material-icons">description</i></a>&nbsp;
+
+     											</center>
+     										</td>
      										<td style="text-align: center;vertical-align: middle;">
      											<center>
      												<a href="<?= base_url(); ?>rekap/laporan/<?= $kontrak['id_kontrak']; ?>"

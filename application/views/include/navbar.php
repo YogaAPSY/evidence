@@ -76,10 +76,10 @@
     					</a>
     				</li>
     				<?php if ($this->session->userdata('status') == 1) : ?>
-    				<li class="<?php echo ($title == 'monitoring') ? 'active' : ''; ?>">
-    					<a href="<?= base_url(); ?>Kontrak/monitoring">
+    				<li class="<?php echo ($title == 'vendor') ? 'active' : ''; ?>">
+    					<a href="<?= base_url(); ?>Vendor">
     						<i class=" material-icons">view_list</i>
-    						<span>Monitoring Kontrak</span>
+    						<span>Pelaksanaan Kontrak</span>
     					</a>
     				</li>
 

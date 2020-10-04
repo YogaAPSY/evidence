@@ -28,7 +28,7 @@
      <section class="content">
      	<div class="container-fluid">
      		<div class="block-header">
-     			<h2>Identitas rekap</h2>
+     			<h2>REKAP PELAKSANAAN KONTRAK</h2>
      		</div>
 
      		<!-- Basic Examples -->
@@ -37,7 +37,8 @@
      				<div class="card">
      					<div class="header">
      						<h2 style="font-size: 22px;color:#ad1455;font-weight: bold;">
-     							<center>List rekap</center>
+     							<center>REKAP PELAKSANAAN KONTRAK
+     							</center>
      						</h2> <br><br>
      						<!-- <a href="<?= base_url(); ?>rekap/add">
     							<button type="button" class="btn btn-info waves-effect">
@@ -96,8 +97,8 @@
      											<?php $progress = $rekap['realisasi'] / $rekap['vol'] * 100; echo floor($progress) ?>%
      										</td>
      										<td style=" text-align: center;vertical-align: middle;">
-     											<a href="#" title="Tambah Stok" data-id="#" data-toggle="modal"
-     												data-target="#ModalTambah<?= $rekap['id_kontrak'] ?>"><i
+     											<a href="#" title="id rekap" data-id="#" data-toggle="modal"
+     												data-target="#ModalTambah<?= $rekap['id_rekap'] ?>"><i
      													style="color:green;"
      													class="material-icons">add_circle_outline</i></a>
      										</td>
@@ -105,9 +106,8 @@
 
 
      									<!-- Tambah Modal-->
-     									<div class="modal fade" id="ModalTambah<?= $rekap['id_kontrak'] ?>"
-     										tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     										aria-hidden="true">
+     									<div class="modal fade" id="ModalTambah<?= $rekap['id_rekap'] ?>" tabindex="-1"
+     										role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
      										<div class="modal-dialog modal-dialog-centered" role="document">
      											<div class="modal-content">
      												<div class="modal-header">
@@ -120,18 +120,18 @@
      												</div>
      												<?php $attributes = array('method' => 'post'); ?>
 
-     												<?php echo form_open('vendor/add/' . $rekap['id_kontrak'], $attributes); ?>
+     												<?php echo form_open('vendor/add/' . $rekap['id_rekap'] . '/' . $rekap['id_kontrak'], $attributes); ?>
      												<div class="modal-body">
      													<label for="">Realisasi</label>
-     													<input type="number" id="stokTambah<?= $rekap['id_kontrak'] ?>"
+     													<input type="number" id="stokTambah<?= $rekap['id_rekap'] ?>"
      														name="realisasi" class="form-control"
      														placeholder="Total progress yang sudah terealisasi"
-     														onblur="cekTambah(<?= $rekap['id_kontrak'] ?>, <?= $rekap['vol'] ?>)">
+     														onblur="cekTambah(<?= $rekap['id_rekap'] ?>, <?= $rekap['vol'] ?>)">
 
      												</div>
      												<!-- Modal footer -->
      												<div class="modal-footer">
-     													<input type="submit" name="submit" class="btn btn-primary"
+     													<input type="submit" name="tambah" class="btn btn-primary"
      														value="Add">
      													<!-- <button type="button" class="btn btn-secondary">Simpan</button> -->
 

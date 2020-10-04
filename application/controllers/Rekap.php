@@ -42,17 +42,20 @@ class Rekap extends CI_Controller
 		$this->load->view('layout', $data);
 	}
 
-
-	public function berkas()
-	{
-		$data['title'] = 'kontrak';
-		$data['satuan'] = get_satuan();
-		// $data['rekaps'] = $this->rekap_model->get_rekap($id);
-		// $data['id'] = $id;
-		// $data['vendor'] = $this->rekap_model->get_vendor();
-		$data['layout'] = 'kontrak/berkas_kontrak';
-		$this->load->view('layout', $data);
-	}
+		public function berkas($id)
+		{
+			$data['title'] = 'monitoring';
+			$data['jumlah_seluruh'] = $this->rekap_model->jumlah_harga($id);
+			// $progress = $this->rekap_model->progress($id);
+			// var_dump($progress);
+			// exit;
+			$data['satuan'] = get_satuan();
+			$data['rekaps'] = $this->rekap_model->get_rekap($id);
+			$data['id'] = $id;
+			// $data['vendor'] = $this->rekap_model->get_vendor();
+			$data['layout'] = 'kontrak/berkas_kontrak';
+			$this->load->view('layout', $data);
+		}
 
 	public function add($id)
 	{

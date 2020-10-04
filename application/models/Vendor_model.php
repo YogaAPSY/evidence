@@ -16,12 +16,27 @@ class Vendor_model extends CI_Model
 		}
 	}
 
+	public function update_realisasi($id, $data)
+	{
+		$this->db->where('id_rekap', $id);
+		$this->db->update('xx_rekap', $data);
+		return true;
+	}
+
 	public function get_list_kontrak($id)
 	{
 		$this->db->where('id_vendor', $id);
 		$query = $this->db->get('xx_kontrak');
 
 		return $query->result_array();
+	}
+
+	public function get_berkas($id)
+	{
+		$this->db->where('id_kontrak', $id);
+		$query = $this->db->get('xx_dokumen');
+
+		return $query->row_array();
 	}
 
 	public function jumlah_harga($id)

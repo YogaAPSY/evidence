@@ -53,6 +53,7 @@
      										<!-- <th>Kontrak</th> -->
      										<th>Nama File</th>
      										<th>File</th>
+     										<th>Tanggal Upload</th>
      										<th style="text-align: center;">Action</th>
 
      									</tr>
@@ -63,7 +64,16 @@
      									<tr>
      										<td>1</td>
      										<td>Dokumen kontrak PDF</td>
-     										<td>File Belum ada</td>
+
+     										<td><?php if(isset($berkas['file1']) && !empty($berkas['file1'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/1/'. $berkas['file1']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?>
+     										</td>
+     										<td><?= $berkas['created_at'] ?></td>
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal1"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -72,7 +82,15 @@
      									<tr>
      										<td>2</td>
      										<td>Dokumen MSDS</td>
-     										<td><a href="#">Download File</a></td>
+     										<td><?php if(isset($berkas['file2']) && !empty($berkas['file2'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/2/'. $berkas['file2']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?>
+     										</td>
+     										<td><?= $berkas['created_at'] ?></td>
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal2"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -81,7 +99,14 @@
      									<tr>
      										<td>3</td>
      										<td>COO/COM(untuk material import)</td>
-     										<td>File Belum ada</td>
+     										<td><?php if(isset($berkas['file3']) && !empty($berkas['file3'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/3/'. $berkas['file3']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<td><?= $berkas['created_at'] ?></td>
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal3"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -91,7 +116,14 @@
      										<td>4</td>
      										<td>Surat keterangan asal usul barang dan surat keterangan barang
      											asli</td>
-     										<td>File Belum ada</td>
+     										<td><?php if(isset($berkas['file4']) && !empty($berkas['file4'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/4/'. $berkas['file4']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<td><?= $berkas['created_at'] ?></td>
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal4"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -100,7 +132,14 @@
      									<tr>
      										<td>5</td>
      										<td>Sertifikat masa garansi</td>
-     										<td>File Belum ada</td>
+     										<td><?php if(isset($berkas['file5']) && !empty($berkas['file5'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/5/'. $berkas['file5']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<td><?= $berkas['created_at'] ?></td>
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal5"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -109,7 +148,14 @@
      									<tr>
      										<td>6</td>
      										<td>Copy sertifikat factory test / routine test dari pabrik</td>
-     										<td>File Belum ada</td>
+     										<td><?php if(isset($berkas['file6']) && !empty($berkas['file6'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/6/'. $berkas['file6']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<td><?= $berkas['created_at'] ?></td>
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal6"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -143,7 +189,7 @@
      			<div class="modal-body">
      				<?php $attributes = array('method' => 'post'); ?>
 
-     				<?php echo form_open('kontrak/add', $attributes); ?>
+     				<?php echo form_open_multipart('vendor/upload/'. $id_kontrak, $attributes); ?>
 
      				<div class="form-group">
      					<div class="form-line">
@@ -151,7 +197,8 @@
      							<h4 style="font-size: 17.1px;">Dokumen kontrak
      							</h4>
      						</label>
-     						<input type="file" onchange="cekPdf800(this)" name="kode_kategori" class="form-control"
+     						<!-- <input type="hidden" value="1" name="tes"> -->
+     						<input type="file" onchange="cekPdf800(this)" name="file1" class="form-control"
      							placeholder="Ex : NARK2020" required autocomplete="off" />
 
      					</div>
@@ -167,7 +214,7 @@
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;">Close</button>
      				<input type="submit" class="btn btn-primary pull-right"
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;" value="SIMPAN"
-     					name="add_kontrak">
+     					name="add_berkas">
      			</div>
 
      			</form>
@@ -192,7 +239,7 @@
      			<div class="modal-body">
      				<?php $attributes = array('method' => 'post'); ?>
 
-     				<?php echo form_open('kontrak/add', $attributes); ?>
+     				<?php echo form_open_multipart('vendor/upload/'. $id_kontrak, $attributes); ?>
 
      				<div class="form-group">
      					<div class="form-line">
@@ -200,7 +247,7 @@
      							<h4 style="font-size: 17.1px;">File MSDS
      							</h4>
      						</label>
-     						<input onchange="cekPdf800(this)" type="file" name="kode_kategori" class="form-control"
+     						<input onchange="cekPdf800(this)" type="file" name="file2" class="form-control"
      							placeholder="Ex : NARK2020" required autocomplete="off" />
 
      					</div>
@@ -216,7 +263,7 @@
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;">Close</button>
      				<input type="submit" class="btn btn-primary pull-right"
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;" value="SIMPAN"
-     					name="add_kontrak">
+     					name="add_berkas">
      			</div>
 
      			</form>
@@ -241,7 +288,7 @@
      			<div class="modal-body">
      				<?php $attributes = array('method' => 'post'); ?>
 
-     				<?php echo form_open('kontrak/add', $attributes); ?>
+     				<?php echo form_open_multipart('vendor/upload/'. $id_kontrak, $attributes); ?>
 
      				<div class="form-group">
      					<div class="form-line">
@@ -249,8 +296,8 @@
      							<h4 style="font-size: 17.1px;">COO/COM(untuk material impor)
      							</h4>
      						</label>
-     						<input type="file" name="kode_kategori" class="form-control" placeholder="Ex : NARK2020"
-     							required autocomplete="off" />
+     						<input type="file" name="file3" class="form-control" placeholder="Ex : NARK2020" required
+     							autocomplete="off" />
      					</div>
      					<small>pdf</small>
      				</div>
@@ -264,7 +311,7 @@
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;">Close</button>
      				<input type="submit" class="btn btn-primary pull-right"
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;" value="SIMPAN"
-     					name="add_kontrak">
+     					name="add_berkas">
      			</div>
 
      			</form>
@@ -289,7 +336,7 @@
      			<div class="modal-body">
      				<?php $attributes = array('method' => 'post'); ?>
 
-     				<?php echo form_open('kontrak/add', $attributes); ?>
+     				<?php echo form_open_multipart('vendor/upload/'. $id_kontrak, $attributes); ?>
 
      				<div class="form-group">
      					<div class="form-line">
@@ -299,8 +346,8 @@
      								asli
      							</h4>
      						</label>
-     						<input type="file" name="kode_kategori" class="form-control" placeholder="Ex : NARK2020"
-     							required autocomplete="off" />
+     						<input type="file" name="file4" class="form-control" placeholder="Ex : NARK2020" required
+     							autocomplete="off" />
      					</div>
      					<small>pdf</small>
      				</div>
@@ -314,7 +361,7 @@
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;">Close</button>
      				<input type="submit" class="btn btn-primary pull-right"
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;" value="SIMPAN"
-     					name="add_kontrak">
+     					name="add_berkas">
      			</div>
 
      			</form>
@@ -339,7 +386,7 @@
      			<div class="modal-body">
      				<?php $attributes = array('method' => 'post'); ?>
 
-     				<?php echo form_open('kontrak/add', $attributes); ?>
+     				<?php echo form_open_multipart('vendor/upload/'. $id_kontrak, $attributes); ?>
 
      				<div class="form-group">
      					<div class="form-line">
@@ -347,8 +394,8 @@
      							<h4 style="font-size: 17.1px;">Sertifikat masa garansi
      							</h4>
      						</label>
-     						<input type="file" name="kode_kategori" class="form-control" placeholder="Ex : NARK2020"
-     							required autocomplete="off" />
+     						<input type="file" name="file5" class="form-control" placeholder="Ex : NARK2020" required
+     							autocomplete="off" />
      					</div>
      					<small>pdf</small>
      				</div>
@@ -362,7 +409,7 @@
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;">Close</button>
      				<input type="submit" class="btn btn-primary pull-right"
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;" value="SIMPAN"
-     					name="add_kontrak">
+     					name="add_berkas">
      			</div>
 
      			</form>
@@ -387,7 +434,7 @@
      			<div class="modal-body">
      				<?php $attributes = array('method' => 'post'); ?>
 
-     				<?php echo form_open('kontrak/add', $attributes); ?>
+     				<?php echo form_open_multipart('vendor/upload/'. $id_kontrak, $attributes); ?>
 
      				<div class="form-group">
      					<div class="form-line">
@@ -395,8 +442,8 @@
      							<h4 style="font-size: 17.1px;">Copy sertifikat factory test/ routine test dari pabrik
      							</h4>
      						</label>
-     						<input type="file" name="kode_kategori" class="form-control" placeholder="Ex : NARK2020"
-     							required autocomplete="off" />
+     						<input type="file" name="file6" class="form-control" placeholder="Ex : NARK2020" required
+     							autocomplete="off" />
      					</div>
      					<small>pdf</small>
      				</div>
@@ -410,7 +457,7 @@
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;">Close</button>
      				<input type="submit" class="btn btn-primary pull-right"
      					style="margin-right: 20px;font-size: 16px;height: 40px;width: 100px;" value="SIMPAN"
-     					name="add_kontrak">
+     					name="add_berkas">
      			</div>
 
      			</form>
