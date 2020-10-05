@@ -81,7 +81,17 @@ class Vendor extends CI_Controller
 		$berkas = $this->vendor_model->get_berkas($id);
 		$data['berkas'] = '';
 		if(empty($berkas)){
-			$data['berkas'] = [];
+				$data['berkas'] = [
+				'id_kontrak' => '',
+				'file1' => '',
+				'file2' => '',
+				'file3' => '',
+				'file4' => '',
+				'file5' => '',
+				'file6' => '',
+				'created_at' => '00:00:00 00:00'
+
+				];
 		}else{
 			$data['berkas'] = $berkas;
 		}

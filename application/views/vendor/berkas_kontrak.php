@@ -53,7 +53,7 @@
      										<!-- <th>Kontrak</th> -->
      										<th>Nama File</th>
      										<th>File</th>
-     										<th>Tanggal Upload</th>
+     										<!-- <th>Tanggal Upload</th> -->
      										<th style="text-align: center;">Action</th>
 
      									</tr>
@@ -73,7 +73,7 @@
      											File belum diupload
      											<?php endif; ?>
      										</td>
-     										<td><?= $berkas['created_at'] ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal1"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -90,7 +90,7 @@
      											File belum diupload
      											<?php endif; ?>
      										</td>
-     										<td><?= $berkas['created_at'] ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal2"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -106,7 +106,7 @@
      											<?php else : ?>
      											File belum diupload
      											<?php endif; ?></td>
-     										<td><?= $berkas['created_at'] ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal3"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -123,7 +123,7 @@
      											<?php else : ?>
      											File belum diupload
      											<?php endif; ?></td>
-     										<td><?= $berkas['created_at'] ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal4"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -139,7 +139,7 @@
      											<?php else : ?>
      											File belum diupload
      											<?php endif; ?></td>
-     										<td><?= $berkas['created_at'] ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal5"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"
@@ -155,7 +155,7 @@
      											<?php else : ?>
      											File belum diupload
      											<?php endif; ?></td>
-     										<td><?= $berkas['created_at'] ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
      										<td style=" text-align: center;vertical-align: middle;"><a href="#"
      												type="button" data-toggle="modal" data-target="#myModal6"
      												data-placement="top" title="Edit"><i style="color:#00b0e4;"

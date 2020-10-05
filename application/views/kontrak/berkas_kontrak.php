@@ -53,7 +53,7 @@
      										<!-- <th>Kontrak</th> -->
      										<th>Nama File</th>
      										<th>File</th>
-     										<th>Tanggal Upload</th>
+     										<!-- <th>Tanggal Upload</th> -->
 
      									</tr>
      								</thead>
@@ -63,39 +63,84 @@
      									<tr>
      										<td>1</td>
      										<td>Dokumen kontrak PDF</td>
-     										<td>File Belum ada</td>
-     										<td>Tanggal</td>
+
+     										<td><?php if(isset($berkas['file1']) && !empty($berkas['file1'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/1/'. $berkas['file1']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?>
+     										</td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
+
      									</tr>
      									<tr>
      										<td>2</td>
      										<td>Dokumen MSDS</td>
-     										<td><a href="#">Download File</a></td>
-     										<td>Tanggal</td>
+     										<td><?php if(isset($berkas['file2']) && !empty($berkas['file2'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/2/'. $berkas['file2']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?>
+     										</td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
+
      									</tr>
      									<tr>
      										<td>3</td>
      										<td>COO/COM(untuk material import)</td>
-     										<td>File Belum ada</td>
-     										<td>Tanggal</td>
+     										<td><?php if(isset($berkas['file3']) && !empty($berkas['file3'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/3/'. $berkas['file3']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
+
      									</tr>
      									<tr>
      										<td>4</td>
      										<td>Surat keterangan asal usul barang dan surat keterangan barang
      											asli</td>
-     										<td>File Belum ada</td>
-     										<td>Tanggal</td>
+     										<td><?php if(isset($berkas['file4']) && !empty($berkas['file4'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/4/'. $berkas['file4']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
+
      									</tr>
      									<tr>
      										<td>5</td>
      										<td>Sertifikat masa garansi</td>
-     										<td>File Belum ada</td>
-     										<td>Tanggal</td>
+     										<td><?php if(isset($berkas['file5']) && !empty($berkas['file5'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/5/'. $berkas['file5']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
+
      									</tr>
      									<tr>
      										<td>6</td>
      										<td>Copy sertifikat factory test / routine test dari pabrik</td>
-     										<td>File Belum ada</td>
-     										<td>Tanggal</td>
+     										<td><?php if(isset($berkas['file6']) && !empty($berkas['file6'])) : ?>
+     											<a href="<?= base_url('assets/upload/berkas/6/'. $berkas['file6']) ?>"
+     												target="_blank" rel="noopener noreferrer">Download
+     												Dokumen</a>
+     											<?php else : ?>
+     											File belum diupload
+     											<?php endif; ?></td>
+     										<!-- <td><?= $berkas['created_at'] ?></td> -->
+
      									</tr>
 
      								</tbody>

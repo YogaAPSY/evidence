@@ -11,8 +11,8 @@
     						<i class="material-icons">equalizer</i>
     					</div>
     					<div class="content">
-    						<div class="text">TOTAL OBAT</div>
-    						<div class="number count-to" data-from="0" data-to="12 " data-speed="15"
+    						<div class="text">TOTAL USER</div>
+    						<div class="number count-to" data-from="0" data-to="<?= $total_user ?>" data-speed="15"
     							data-fresh-interval="20"></div>
     					</div>
     				</div>
@@ -23,8 +23,8 @@
     						<i class="material-icons">face</i>
     					</div>
     					<div class="content">
-    						<div class="text">TOTAL PEGAWAI</div>
-    						<div class="number count-to" data-from="0" data-to="12" data-speed="1000"
+    						<div class="text">TOTAL KONTRAK</div>
+    						<div class="number count-to" data-from="0" data-to="<?= $total_kontrak ?>" data-speed="1000"
     							data-fresh-interval="20"></div>
     					</div>
     				</div>
@@ -35,8 +35,8 @@
     						<i class="material-icons">equalizer</i>
     					</div>
     					<div class="content">
-    						<div class="text">TOTAL ADMIN</div>
-    						<div class="number count-to" data-from="0" data-to="12" data-speed="1000"
+    						<div class="text">TOTAL REKAP</div>
+    						<div class="number count-to" data-from="0" data-to="<?= $total_rekap ?>" data-speed="1000"
     							data-fresh-interval="20"></div>
     					</div>
     				</div>
@@ -47,8 +47,8 @@
     						<i class="material-icons">equalizer</i>
     					</div>
     					<div class="content">
-    						<div class="text">TOTAL TRANSAKSI</div>
-    						<div class="number count-to" data-from="0" data-to="12" data-speed="1000"
+    						<div class="text">TOTAL DOKUMEN</div>
+    						<div class="number count-to" data-from="0" data-to="<?= $total_dokumen ?>" data-speed="1000"
     							data-fresh-interval="20"></div>
     					</div>
     				</div>

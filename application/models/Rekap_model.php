@@ -28,6 +28,14 @@ class Rekap_model extends CI_Model
 		return $query->result_array();
 	}
 
+	public function get_berkas($id)
+	{
+		$this->db->where('id_kontrak', $id);
+		$query = $this->db->get('xx_dokumen');
+
+		return $query->row_array();
+	}
+
 	public function jumlah_harga($id)
 	{
 

@@ -45,12 +45,28 @@ class Rekap extends CI_Controller
 		public function berkas($id)
 		{
 			$data['title'] = 'monitoring';
-			$data['jumlah_seluruh'] = $this->rekap_model->jumlah_harga($id);
-			// $progress = $this->rekap_model->progress($id);
-			// var_dump($progress);
-			// exit;
-			$data['satuan'] = get_satuan();
-			$data['rekaps'] = $this->rekap_model->get_rekap($id);
+		
+			$berkas = $this->rekap_model->get_berkas($id);
+				// var_dump($berkas);
+				// exit;
+			$data['berkas'] = '';
+			
+			if($berkas == NULL){
+				$data['berkas'] = [
+					'id_kontrak' => '',
+					'file1' => '',
+					'file2' => '',
+					'file3' => '',
+					'file4' => '',
+					'file5' => '',
+					'file6' => '',
+					'created_at' => '00:00:00 00:00'
+
+				];
+			}else{
+				$data['berkas'] = $berkas;
+			}
+
 			$data['id'] = $id;
 			// $data['vendor'] = $this->rekap_model->get_vendor();
 			$data['layout'] = 'kontrak/berkas_kontrak';
